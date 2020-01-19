@@ -1,27 +1,82 @@
-# Player
+# Player RTP para LG WebOS
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.23.
+Este repositório contém um protótipo para uma aplicação cliente do RTP Play não oficial que usa
+um servidor [RTP Player API](https://github.com/dmpasilva/rtp-player-api).
 
-## Development server
+**Esta aplicação não se encontra pronta para ser usada num ambiente de produção!**
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Funcionalidades:
 
-## Code scaffolding
+Esta aplicação não oficial do RTP Play suporta as seguintes funcionalidades:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- [x] Lista de categorias VOD
+- [x] Lista parcial de programas de TV VOD
+- [x] Lista de episódios de programa de TV VOD
+- [x] Reprodução de programa de TV VOD
+- [x] Avançar e recuar em programa de TV VOD
+- [ ] Lista de programas de TV VOD por categoria
+- [ ] Suporte a programas de TV com várias partes
+- [ ] Legendas
+- [ ] Publicidade
+- [ ] Detalhes do programa de TV e dos episódios
+- [ ] Programas de rádio
+- [ ] Programas de rádio por categoria
+- [ ] Reprodução de programas de rádio
+- [ ] Reprodução de programas de rádio por partes
+- [ ] Detalhes do programa de rádio e dos episódios
+- [ ] Paginação
+- [ ] Pesquisa por texto
+- [ ] Emissões em direto de TV
+- [ ] Emissões em direto de Rádio
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## Requisitos
 
-## Running unit tests
+São necessárias as seguintes aplicações instaladas no computador:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- Angular CLI
+- WebOS SDK
+- [RTP Player API](https://github.com/dmpasilva/rtp-player-api)
 
-## Running end-to-end tests
+Antes de iniciar o processo de desenvolvimento, é necessário substituir o URL
+do servidor da RTP Player API nos ficheiros `environments/environment.ts` e 
+`environments/environment.prod.ts`.
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+## Instruções de compilação
 
-## Further help
+A aplicação pode ser iniciada em modo de desenvolvimento e testada localmente no computador executando:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+```
+npm start
+```
+
+Para compilar a aplicação para modo de TV, são necessários os seguintes passos:
+
+1. Compilar a aplicação em modo de produção:
+
+  ```
+  ng build --prod
+  ```
+
+2. Empacotar a aplicação para o formato de aplicações LG:
+
+  ```
+  cd dist
+  ares-package --no-minif .
+  ```
+
+3. Enviar a aplicação compilada para a TV:
+
+  ```
+  ares-install --device tv ./pt.davidsilva.webos.player_0.0.1_all.ipk
+  ares-inspect --device tv --app pt.davidsilva.webos.player --open
+  ```
+
+
+## Aviso legal
+
+Esta é uma aplicação não oficial desenvolvida por programadores independentes. 
+
+Esta aplicação não é fornecida, suportada ou apoiada pela RTP ou qualquer empresa do grupo RTP.
+
+Esta aplicação poderá não produzir os resultados esperados pelo utilizador, uma vez que a qualquer momento a RTP poderá modificar o design do site ou criar mecanismos de bloqueio ao funcionamento desta aplicação.

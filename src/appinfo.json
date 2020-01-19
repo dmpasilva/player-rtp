@@ -1,0 +1,10 @@
+{
+    "vendor": "David Silva",
+    "largeIcon": "largeIcon.png",
+    "icon": "icon.png",
+    "main": "index.html",
+    "id": "pt.davidsilva.webos.player",
+    "title": "Player RTP",
+    "type": "web",
+    "version": "0.0.1"
+}

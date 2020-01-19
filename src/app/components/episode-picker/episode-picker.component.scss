@@ -1,0 +1,22 @@
+app-episode-picker {
+  background: #29272A;
+  display: block;
+  width: 60vw;
+
+  .container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+  }
+
+  .program-info {
+    width: 100%;
+  }
+
+  .episode-picker {
+    width: 100%;
+    height: 40vh;
+    overflow: scroll;
+  }
+
+}

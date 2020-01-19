@@ -25,12 +25,18 @@
             "aot": false,
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/appinfo.json",
+              "src/largeIcon.png",
+              "src/icon.png"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "./node_modules/video.js/dist/video-js.min.css"
             ],
-            "scripts": []
+            "scripts": [
+              "./node_modules/video.js/dist/video.min.js"
+            ]
           },
           "configurations": {
             "production": {

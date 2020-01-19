@@ -1,0 +1,21 @@
+<div *ngIf="ready; else loading" class="contents">
+  <div class="categories">
+    <app-category *ngFor="let category of categories; let row = index"
+                  [data]="category"
+                  [highlighted]="currentRow === row && currentColumn === -1"
+                  [active]="row === currentCategory"
+    ></app-category>
+  </div>
+  <div class="main">
+    <div *ngFor="let line of rows; let row = index" class="row">
+      <app-menu-item *ngFor="let program of line; let column = index"
+                     [data]="program"
+                     [active]="currentRow === row && currentColumn === column"
+      ></app-menu-item>
+    </div>
+  </div>
+</div>
+
+<ng-template #loading>
+  <h1 class="loading-message">A carregar...</h1>
+</ng-template>

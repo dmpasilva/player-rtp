@@ -1,0 +1,28 @@
+.loading-message {
+  text-align: center;
+  padding-top: 5rem;
+}
+
+.contents {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  overflow: hidden;
+}
+
+.row {
+  display: flex;
+  width: 100%;
+}
+
+.categories {
+  width: 20%;
+  height: 100%;
+  overflow-y: scroll;
+}
+
+.main {
+  width: 80%;
+  height: 100%;
+  overflow-y: scroll;
+}

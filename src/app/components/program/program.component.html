@@ -1,0 +1,19 @@
+<video #programVideo class="video-js vjs-fluid vjs-default-skin" controls preload="auto"
+       *ngIf="url; else loading"
+       data-setup='{}'>
+  <source
+    [src]="url"
+    type="application/x-mpegURL">
+</video>
+
+<div class="timer-info" id="ff" *ngIf="showFF">
+  + 30s
+</div>
+
+<div class="timer-info" id="rw" *ngIf="showRw">
+  - 15s
+</div>
+
+<ng-template #loading>
+  <h1 class="loading-message">A carregar...</h1>
+</ng-template>

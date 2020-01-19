@@ -1,0 +1,21 @@
+<h1>Escolher episódio</h1>
+
+<div class="container" *ngIf="episodes && episodes.length; else loading">
+<div class="program-info">
+  <img [src]="data.image">
+  <h2>{{data.title}}</h2>
+</div>
+
+<div class="episode-picker" *ngIf="episodes && episodes.length">
+
+  <app-category *ngFor="let episode of episodes; let idx = index"
+                [data]="episode"
+                [highlighted]="currentRow === idx">
+  </app-category>
+</div>
+
+</div>
+
+<ng-template #loading>
+  <h1 class="loading-message">A carregar...</h1>
+</ng-template>

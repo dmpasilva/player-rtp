@@ -1,1 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~video.js/dist/video-js.min.css";
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+body {
+  background: #29272A;
+  color: #ffffff;
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+}
+
+.mat-dialog-container {
+  background: #29272A;
+  color: #ffffff;
+}
